@@ -3,12 +3,12 @@ import Consts
 import Screen
 
 
-object1 = pygame.Rect(240, 0, 4,4)
-object2 = pygame.Rect(260, 0, 4,4)
-
 def moving_object(object1, object2):
+    object1 = pygame.Rect(100, 0, 4, 4)
+    object2 = pygame.Rect(300, 0, 4, 4)
     object1.y += 10
     object2.y += 10
+    return object1.y
 
 def place_objects(object1_cords_tuple,object2_cords_tuple, png_couple):
     object1 = png_couple[0]
