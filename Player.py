@@ -1,7 +1,8 @@
 import Consts
-import Objects
 import pygame
-import Screen
+from pygame import mixer
+
+
 def player_image():
     if Consts.counter % 2 == 0:
         player_image = pygame.image.load('png_files/player_left_step.png')
@@ -25,10 +26,12 @@ def right_key():
 
 
 def meeting_check(object_Y, object):
-  if object_Y + 100 == 590:
-
-      if object in Consts.sustainable_list:
-          Consts.good_points += 1
-      else:
+    if object_Y + 100 == 590:
+        mixer.init()
+        pop_sound = mixer.Sound("sounds/Pop  Sound Effect.wav")
+        mixer.Sound.play(pop_sound)
+        if object in Consts.sustainable_list:
+            Consts.good_points += 1
+        else:
           Consts.bad_points -= 1
-  return Consts.good_points, Consts.bad_points
+    return Consts.good_points, Consts.bad_points

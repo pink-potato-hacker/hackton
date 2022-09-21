@@ -1,6 +1,9 @@
+import time
+
 import pygame
 import Consts
 import Player
+from pygame import mixer
 
 screen = pygame.display.set_mode(Consts.screen_size)
 
@@ -64,9 +67,14 @@ def lose(bad_points):
         losp = pygame.image.load('png_files\lose_screen.png')
         losp = pygame.transform.scale(losp, (500, 650))
         screen.blit(losp, (0, 0))
+        mixer.init()
+        pop_sound = mixer.Sound("sounds/Explosion sound effect.wav")
+        mixer.Sound.play(pop_sound)
         pygame.display.flip()
         pygame.display.update()
-
+        time.sleep(2)
+        pygame.quit()
+        quit()
         return True
     return False
 

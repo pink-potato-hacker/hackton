@@ -3,6 +3,7 @@ screen_size = (500,650)
 background_color = (255,255,255)
 objects_size = (100,100)
 running = True
+transparent = (0, 0, 0, 0)
 PLAYER_WIDTH = 55
 PLAYER_HEIGHT = 60
 VEL = 200
