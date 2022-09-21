@@ -2,20 +2,24 @@ import pygame
 import Consts
 import Screen
 
+
 object1 = pygame.Rect(240, 0, 4,4)
-object1 = pygame.Rect(260, 0, 4,4)
+object2 = pygame.Rect(260, 0, 4,4)
+
 def moving_object(object1, object2):
     object1.y += 10
     object2.y += 10
-    pygame.display.update()
 
-def place_objects(cords_tuple, png_couple):
-    unsustainable_object = png_couple[0]
-    unsustainable_img = pygame.image.load("png files/"+unsustainable_object+".png")
-    unsustainable_img = pygame.transform.scale(unsustainable_img, Consts.objects_size)
-    Screen.screen.blit(unsustainable_img, cords_tuple)
+def place_objects(object1_cords_tuple,object2_cords_tuple, png_couple):
+    object1 = png_couple[0]
+    object1_img = pygame.image.load("png_files/"+object1+".png")
+    object1_img = pygame.transform.scale(object1_img, Consts.objects_size)
+    object1 = Screen.screen.blit(object1_img, object1_cords_tuple)
 
-    sustainable_object = png_couple[1]
-    sustainable_img = pygame.image.load("png files/" + sustainable_object + ".png")
-    sustainable_img = pygame.transform.scale(sustainable_img, Consts.objects_size)
-    Screen.screen.blit(sustainable_img, cords_tuple)
+    object2 = png_couple[1]
+    object2_img = pygame.image.load("png_files/" + object2 + ".png")
+    object2_img = pygame.transform.scale(object2_img, Consts.objects_size)
+    object2 = Screen.screen.blit(object2_img, object2_cords_tuple)
+
+    return object1,object2
+
