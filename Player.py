@@ -25,9 +25,10 @@ def right_key():
 
 
 def meeting_check(object_Y, object):
-    if object_Y  == 590:
-        if object in Consts.sustainable_list:
-            Consts.good_points += 1
-    else:
-        Consts.bad_points -= 1
-    return Consts.good_points, Consts.bad_points
+  if object_Y + 100 == 590:
+
+      if object in Consts.sustainable_list:
+          Consts.good_points += 1
+      else:
+          Consts.bad_points -= 1
+  return Consts.good_points, Consts.bad_points
