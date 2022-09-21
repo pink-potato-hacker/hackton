@@ -5,3 +5,7 @@ objects_list = [('fast_fashion','sustainable_fashion'),('meat','vegan'),('plasti
                 ('trash_bin','recycle_trash_bin')]
 right_object_x = 240
 left_object_x = 260
+
+PLAYER_WIDTH = 55
+PLAYER_HEIGHT = 60
+VEL = 20

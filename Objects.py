@@ -2,6 +2,12 @@ import pygame
 import Consts
 import Screen
 
+object1 = pygame.Rect(240, 0, 4,4)
+object1 = pygame.Rect(260, 0, 4,4)
+def moving_object(object1, object2):
+    object1.y += 10
+    object2.y += 10
+    pygame.display.update()
 
 def place_objects(cords_tuple, png_couple):
     unsustainable_object = png_couple[0]
