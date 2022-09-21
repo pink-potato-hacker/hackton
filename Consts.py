@@ -1,11 +1,16 @@
 screen_size = (500,650)
 background_color = (255,255,255)
 objects_size = (100,100)
-objects_list = [('fast_fashion','sustainable_fashion'),('meat','vegan'),('plastic_straw','reusable_cup'),
-                ('trash_bin','recycle_trash_bin')]
-right_object_start = (100,0)
-left_object_start = (300,0)
 
 PLAYER_WIDTH = 55
 PLAYER_HEIGHT = 60
-VEL = 20
+VEL = 200
+y_location = 0
+counter = 0
+bad_points = 2
+good_points = 2
+
+unsustainable_list = ['fast_fashion','meat','plastic_straw','trash_bin']
+sustainable_list = ['sustainable_fashion','vegan','reusable_cup','recycle_trash_bin']
+right_object_x = 100
+left_object_x = 300

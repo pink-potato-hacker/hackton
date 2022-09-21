@@ -1,9 +1,64 @@
 import pygame
 import Consts
+import Player
 
 screen = pygame.display.set_mode(Consts.screen_size)
 
-def screen_func():
+def start_screen():
     pygame.display.set_caption('hackton game')
-    screen.fill(Consts.background_color)
+    road = pygame.image.load('png_files/opening_screen.png')
+    road = pygame.transform.scale(road, (500, 650))
+    screen.blit(road, (0, 0))
+
+def draw_hearts(bad_points):
+  x = 475
+  y = 0
+  for i in range (bad_points):
+    heart = pygame.image.load('png_files\heart.png')
+    heart = pygame.transform.scale(heart, (25, 25))
+    screen.blit(heart, (x, y))
+    x -= 25
+
+def draw_crowns(good_points):
+  x = 0
+  y = 0
+  for i in range (good_points):
+    crown = pygame.image.load('png_files\crown.png')
+    crown = pygame.transform.scale(crown, (25, 25))
+    screen.blit(crown, (x, y))
+    x += 25
+
+
+def draw_to_screen():
+    start_screen()
+    draw_hearts(Consts.bad_points)
+    draw_crowns(Consts.good_points)
+    screen.blit(Player.player_image(), (Player.player.x, Player.player.y))
+    pygame.display.update()
+
+
+def load_instraction():
+    pygame.display.set_caption('hackton game')
+    ins = pygame.image.load('png_files\instraction.png')
+    ins = pygame.transform.scale(ins, (500, 650))
+    screen.blit(ins, (0, 0))
+    pygame.display.update()
+
+def lose(bad_points):
+    if bad_points == 0:
+        losp = pygame.image.load('png_files\lose_screen.png')
+        losp = pygame.transform.scale(losp, (500, 650))
+        screen.blit(losp, (0, 0))
+        pygame.display.update()
+        return True
+    return False
+
+def win(good_points):
+  if good_points == 5:
+    winp = pygame.image.load('png_files\win.png')
+    winp = pygame.transform.scale(winp, (500, 650))
+    screen.blit(winp, (0, 0))
+    pygame.display.update()
+    return True
+  return False
 
