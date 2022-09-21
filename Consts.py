@@ -7,8 +7,8 @@ PLAYER_HEIGHT = 60
 VEL = 200
 y_location = 0
 counter = 0
-bad_points = 2
-good_points = 2
+bad_points = 5
+good_points = 0
 
 unsustainable_list = ['fast_fashion','meat','plastic_straw','trash_bin']
 sustainable_list = ['sustainable_fashion','vegan','reusable_cup','recycle_trash_bin']

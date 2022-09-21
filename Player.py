@@ -20,5 +20,5 @@ def right_key():
         player.x += Consts.VEL
 
 
-#def meeting_check(object_Y):
- #   if
+def meeting_check(object_Y):
+  pass

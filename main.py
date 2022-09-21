@@ -6,30 +6,29 @@ import Objects
 
 def main():
     objects_y = 0
-    num = 0
     running = True
     clock = pygame.time.Clock()
     while running:
         Screen.win(Consts.good_points)
         Screen.lose(Consts.bad_points)
         Screen.draw_to_screen()
-        object1 = Consts.sustainable_list[num]
-        object2 = Consts.unsustainable_list[num]
+        Objects.object1 = Consts.sustainable_list[Objects.num]
+        Objects.object2 = Consts.unsustainable_list[Objects.num]
         object1_cords_tuple = (Consts.right_object_x, objects_y)
         object2_cords_tuple = (Consts.left_object_x, objects_y)
-        Objects.place_objects(object1_cords_tuple, object2_cords_tuple, object1, object2)
+        Objects.place_objects(object1_cords_tuple, object2_cords_tuple, Objects.object1, Objects.object2)
         objects_y += 10
         pygame.display.update()
         if objects_y == 650:
-            num += 1
+            Objects.num += 1
             objects_y = 0
-            if num == 4:
-                running = False
+            if Objects.num == 4:
+                Objects.num = 0
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     count = 0
-                    while count<= 1000  :
+                    while count <= 300 :
                         Screen.load_instraction()
                         count += 1
                 if event.key == pygame.K_RIGHT:
