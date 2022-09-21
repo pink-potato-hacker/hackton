@@ -1,7 +1,6 @@
 import pygame
 import Consts
 import Player
-import random
 
 screen = pygame.display.set_mode(Consts.screen_size)
 
@@ -35,9 +34,6 @@ def draw_to_screen():
     draw_hearts(Consts.bad_points)
     draw_crowns(Consts.good_points)
     screen.blit(Player.player_image(), (Player.player.x, Player.player.y))
-    for i in range(3):
-
-        draw_start_message()
     pygame.display.update()
 
 
@@ -65,13 +61,3 @@ def win(good_points):
     pygame.display.update()
     return True
   return False
-
-def draw_start_message(message):
-        draw_message(message, Consts.START_FONT_SIZE,
-                 Consts.START_COLOR, Consts.START_LOCATION)
-
-
-def draw_message(message, font_size, color, location):
-    font = pygame.font.SysFont(Consts.FONT_NAME, font_size)
-    text_img = font.render(message, True, color)
-    screen.blit(text_img, location)
