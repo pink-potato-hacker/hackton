@@ -4,11 +4,11 @@ import pygame
 import Player
 import Objects
 
+pygame.init()
 def main():
     objects_y = 0
-    running = True
     clock = pygame.time.Clock()
-    while running:
+    while Consts.running:
         Screen.win(Consts.good_points)
         Screen.lose(Consts.bad_points)
         Screen.draw_to_screen()
@@ -18,6 +18,7 @@ def main():
         object2_cords_tuple = (Consts.left_object_x, objects_y)
         Objects.place_objects(object1_cords_tuple, object2_cords_tuple, Objects.object1, Objects.object2)
         objects_y += 10
+        Player.meeting_check(objects_y, Objects.object1)
         pygame.display.update()
         if objects_y == 650:
             Objects.num += 1
@@ -37,7 +38,7 @@ def main():
                     Player.left_key()
                 Consts.counter += 1
             if event.type == pygame.QUIT:
-                running = False
+                Consts.running = False
     clock.tick(60)
     pygame.quit()
 
