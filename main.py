@@ -2,6 +2,7 @@ import Consts
 import Objects
 import Screen
 import pygame
+import Player
 
 object1_cords_tuple = Consts.right_object_start
 object2_cords_tuple = Consts.left_object_start
@@ -20,4 +21,9 @@ while running:
             break
         if event.type == pygame.QUIT:
             running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                Player.right_key()
+            if event.key == pygame.K_LEFT:
+                Player.left_key()
 
